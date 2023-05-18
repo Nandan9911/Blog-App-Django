@@ -1,10 +1,12 @@
 from django.shortcuts import render
 from .models import Post
+from .models import Comments
 
 
 def home(request):
     context = {
-        'posts': Post.objects.all()
+        'posts': Post.objects.all(),
+        'comments': Comments.objects.all()
     }
     return render(request, 'blog/home.html', context)
 

@@ -10,6 +10,19 @@
             <h2><a class="article-title" href="#">{{ post.title }}</a></h2>
             <p class="article-content">{{ post.content }}</p>
           </div>
+          <div class="container">
+            <h2> Comments </h2>
+            <div class="my-2">
+                <form action="/blog/postComment" method="post">
+                    {% csrf_token %}
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">Post Comment </label>
+                        <input type="text" class="form-control" name="comment" placeholder="Enter comment here">
+                    </div>
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </form>
+            </div>
+          </div>
         </article>
     {% endfor %}
 {% endblock content %}

@@ -4,6 +4,7 @@ from django.contrib.auth.models import User
 
 
 class Post(models.Model):
+    sno = models.UUIDField(primary_key=True)
     title = models.CharField(max_length=100)
     content = models.TextField()
     date_posted = models.DateTimeField(default=timezone.now)
@@ -11,3 +12,8 @@ class Post(models.Model):
 
     def __str__(self):
         return self.title
+
+class Comments(models.Model):
+    comment = models.TextField()
+    date_posted = models.DateTimeField(default=timezone.now)
+    postno = models.ForeignKey(Post.sno, on_delete=models.CASCADE)

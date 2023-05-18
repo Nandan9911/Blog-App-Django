@@ -26,12 +26,12 @@
           <span class="navbar-toggler-icon"></span>
           </button>
           <div class="collapse navbar-collapse" id="navbarToggle">
-            <div class="nav navbar-nav mr-auto">
+            <div class="navbar-nav mr-auto">
               <a class="nav-item nav-link" href="{% url 'blog-home' %}">Home</a>
               <a class="nav-item nav-link" href="{% url 'blog-about' %}">About</a>
             </div>
             <!-- Navbar Right Side -->
-            <div class="nav navbar-nav">
+            <div class="navbar-nav">
               {% if user.is_authenticated %}
                 <a class="nav-item nav-link" href="{% url 'profile' %}">Profile</a>
                 <a class="nav-item nav-link" href="{% url 'logout' %}">Logout</a>
